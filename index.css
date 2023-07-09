@@ -1,0 +1,16 @@
+body {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 30%;
+}
+
+.correct {
+  background-color: green;
+  color: whitesmoke;
+}
+
+.wrong {
+  background-color: red;
+  color: whitesmoke;
+}
