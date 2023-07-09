@@ -1,12 +1,12 @@
 const correctAnswer = Math.floor(Math.random() * 101),
   guesses = [];
+const input = document.querySelector("#guess-input"),
+  submit = document.querySelector("#submit");
 let numberOfAttempts = 0,
   gameOver = false;
 
 function checkGuess() {
-  const input = document.querySelector("#guess-input"),
-    submit = document.querySelector("#submit");
-  guess = Number(input.value) || 0;
+  let guess = Number(input.value) || 0;
   let message = "",
     type = "",
     previousGuessesPara,
@@ -42,6 +42,8 @@ function checkGuess() {
 
     previousGuessesPara.setAttribute("id", "previous-guesses");
     messagePara.setAttribute("id", "message");
+    startNewGameButton.setAttribute("id", "reset");
+    startNewGameButton.addEventListener("click", startNewgame);
 
     document.body.appendChild(previousGuessesPara);
     document.body.appendChild(messagePara);
@@ -66,6 +68,10 @@ function getPreviousGuesses() {
     message += " " + guess;
   }
   return message;
+}
+
+function startNewgame() {
+  location.reload();
 }
 
 const submitButton = document.querySelector("#submit");
